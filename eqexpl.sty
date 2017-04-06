@@ -1,0 +1,42 @@
+\ProvidesPackage{eqexpl}[2017/04/06 v.2]
+\RequirePackage{etoolbox}
+
+\newlength{\eqexplIntroWidth}
+\newcommand{\eqexplSetIntro}[1]{%
+  \def\eqexplIntro{#1}%
+  \setlength{\eqexplIntroWidth}{\widthof{\eqexplIntro}+2mm}%
+}
+\eqexplSetIntro{где}
+
+\newlength{\eqexplDelimWidth}
+\newcommand{\eqexplSetDelim}[1]{%
+  \def\eqexplDelim{#1}%
+  \setlength{\eqexplDelimWidth}{\widthof{\eqexplDelim}+2mm}%
+}
+\eqexplSetDelim{---}
+
+\newenvironment{eqexpl}[1][10mm]{%
+  \let\olditem\item%
+  \newlength{\itemWidth}%
+  \setlength{\itemWidth}{#1}%
+  \newlength{\leftSideWidth}%
+  \setlength{\leftSideWidth}{\eqexplIntroWidth+\itemWidth+\eqexplDelimWidth}%
+  \newtoggle{eqexplFirstItem}%
+  \toggletrue{eqexplFirstItem}%
+  \renewcommand{\item}[1]{%
+    \olditem \makebox[\leftSideWidth]{%
+      \makebox[\eqexplIntroWidth][l]{\iftoggle{eqexplFirstItem}{\eqexplIntro}{}}%
+      \makebox[\itemWidth][r]{##1}%
+      \makebox[\eqexplDelimWidth][c]{\eqexplDelim}%
+    }%
+    \togglefalse{eqexplFirstItem}%
+  }%
+  \begin{list}{}{\setlength{\parsep}{0pt}%
+  \setlength{\topsep}{0pt}%
+  \setlength{\itemsep}{0pt}%
+  \setlength{\labelsep}{0pt}%
+  \setlength{\leftmargin}{\leftSideWidth}%
+  \setlength{\itemindent}{-\leftSideWidth}}}{%
+  \end{list}
+}
+\endinput
