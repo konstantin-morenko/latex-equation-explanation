@@ -1,7 +1,7 @@
 Explanation of the formulas in LaTeX
 ========
 
-[Русский]({% link index.ru.md %})
+[Русский]({{ site.url }}{% link index.ru.md %})
 
 Package `eqexpl` was developed for give an ability to make «perfect»
 explanation to formulas, not just the enumeration.
