@@ -34,7 +34,7 @@ argument, default is 10 mm
 
 Delimiter could be set with command `\eqexplSetDelim{delimiter}`
 
-Parenthesis (default «where») could be set with the command
+Parenthesis («where») could be set with the command
 `\eqexplSetIntro{where}`, the parenthesis printed only for the first
 item in the explanation.
 
