@@ -6,11 +6,7 @@ Explanation of the formulas in LaTeX
 Package `eqexpl` was developed for give an ability to make «perfect»
 explanation to formulas, not just the enumeration.
 
-                I = U / Rs,            (1)
-
-    where   U --- voltage at the section, V;
-	       Rs --- total     section    resis-
-		          tance, Ohm.
+![Eqexpl example]({{ site.url }}/eqexpl-example.png)
 
 Requirements:
 1. The variables (left side) must be aligned right..
@@ -22,12 +18,24 @@ Requirements:
 
 The package adds new environment `eqexpl` with a command `\item` with
 one required parameter --- variable to explain.  The explanation in
-the example above was made with the code
+the example above was made with the code in preamble
 
-    \begin{eqexpl}
-      \item{U}voltage at the section, V;
-	  \item{Rs}total section resistance, Ohm.
-	\end{exqexpl}
+```latex
+\usepackage{eqexpl}
+\eqexplSetDelim{=}
+```
+
+and in document
+
+```latex
+\begin{eqexpl}[25mm]
+\item{$H_s$}significant wave height, equal to the average of the
+highest 1/3 of the waves
+\item{$\Delta$}relative buoyant density, equal to $\rho_r / \rho_w -
+1$, where $\rho_w$ is the water density
+\item{$D_{n50}$}nominal diameter defined in Equation (2)
+\end{eqexpl}
+```
 
 Width of the field for explained variables could be set with optional
 argument, default is 10 mm
