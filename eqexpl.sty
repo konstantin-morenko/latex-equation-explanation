@@ -15,11 +15,12 @@
 }
 \eqexplSetDelim{---}
 
+\newlength{\itemWidth}
+\newlength{\leftSideWidth}
+    
 \newenvironment{eqexpl}[1][10mm]{%
   \let\olditem\item%
-  \newlength{\itemWidth}%
   \setlength{\itemWidth}{#1}%
-  \newlength{\leftSideWidth}%
   \setlength{\leftSideWidth}{\eqexplIntroWidth+\itemWidth+\eqexplDelimWidth}%
   \newtoggle{eqexplFirstItem}%
   \toggletrue{eqexplFirstItem}%
