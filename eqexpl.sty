@@ -1,34 +1,57 @@
-\ProvidesPackage{eqexpl}[2017/04/06 v.2]
+\ProvidesPackage{eqexpl}[2017/11/05 v.3]
 \RequirePackage{etoolbox}
+\RequirePackage{calc}
 
-\newlength{\eqexplIntroWidth}
+%% Spaces between elements
+\newlength{\eqexplSpaceWidth}
+\newcommand{\eqexplSetSpace}[1]{%
+  \setlength{\eqexplSpaceWidth}{#1}%
+}
+\eqexplSetSpace{2mm}
+
+%% Width of 'intro' (typ. 'where')
 \newcommand{\eqexplSetIntro}[1]{%
   \def\eqexplIntro{#1}%
-  \setlength{\eqexplIntroWidth}{\widthof{\eqexplIntro}+2mm}%
 }
 \eqexplSetIntro{}
 
-\newlength{\eqexplDelimWidth}
+%% Width of delimiter
 \newcommand{\eqexplSetDelim}[1]{%
   \def\eqexplDelim{#1}%
-  \setlength{\eqexplDelimWidth}{\widthof{\eqexplDelim}+2mm}%
 }
 \eqexplSetDelim{---}
 
+%% Width of item
+\newcommand{\eqexplSetItemWidth}[1]{%
+  \def\eqexplItemWidth{#1}%
+}
+\eqexplSetItemWidth{5mm}
+
+
 \newlength{\itemWidth}
 \newlength{\leftSideWidth}
-    
-\newenvironment{eqexpl}[1][10mm]{%
+
+\newenvironment{eqexpl}[1][\eqexplItemWidth]{%
   \let\olditem\item%
   \setlength{\itemWidth}{#1}%
-  \setlength{\leftSideWidth}{\eqexplIntroWidth+\itemWidth+\eqexplDelimWidth}%
+  \setlength{\leftSideWidth}{\ifdefempty{\eqexplIntro}{}{\widthof{\eqexplIntro}+%
+                             \eqexplSpaceWidth+}%
+                             \itemWidth+%
+                             \eqexplSpaceWidth+%
+                             \widthof{\eqexplDelim}+%
+                             \eqexplSpaceWidth}%
   \newtoggle{eqexplFirstItem}%
   \toggletrue{eqexplFirstItem}%
   \renewcommand{\item}[1]{%
     \olditem \makebox[\leftSideWidth]{%
-      \makebox[\eqexplIntroWidth][l]{\iftoggle{eqexplFirstItem}{\eqexplIntro}{}}%
+      \ifdefempty{\eqexplIntro}{}{
+        \makebox[\widthof{\eqexplIntro}][l]{\iftoggle{eqexplFirstItem}{\eqexplIntro}{}}%
+        \hspace{\eqexplSpaceWidth}%
+      }
       \makebox[\itemWidth][r]{##1}%
-      \makebox[\eqexplDelimWidth][c]{\eqexplDelim}%
+      \hspace{\eqexplSpaceWidth}%
+      \makebox[\widthof{\eqexplDelim}][c]{\eqexplDelim}%
+      \hspace{\eqexplSpaceWidth}%
     }%
     \togglefalse{eqexplFirstItem}%
   }%
