@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{etoolbox}
+\usepackage{eqexpl}
+
+\begin{document}
+
+\section{Test list}
+
+\newcommand{\testList}{
+\item{U} voltage at the section, V;
+\item{Rs} total section resistance, Ohm.
+\item{$Very^{46}$}very very very very very very very very very very very
+  very very very very very very very very very very very very very
+  very very very very very very very very very very very very very
+  very very very very very very very very very long line;
+}
+
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+\section{Setting eqexplSetSpace}
+
+Set eqexplSetSpace to 0
+\eqexplSetSpace{0mm}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set eqexplSetSpace to default
+
+Set eqexplSetSpace to 10
+\eqexplSetSpace{10mm}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set eqexplSetSpace to 20
+\eqexplSetSpace{20mm}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+\section{Setting eqexplSetIntro}
+
+Set eqexplSetSpace to 2mm
+
+Set eqexplSetIntro to 'where'
+\eqexplSetSpace{2mm}
+\eqexplSetIntro{where}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set eqexplSetSpace to 2mm, set eqexplSetIntro to 'where we have'
+\eqexplSetSpace{2mm}
+\eqexplSetIntro{where we have}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+\section{Setting eqexplSetDelim}
+
+\section{Setting eqexplSetItemWidth}
+
+\section{Setting item width for 'begin-end' block}
+
+\end{document}
