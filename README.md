@@ -23,8 +23,8 @@ one required parameter --- variable to explain.  The explanation in
 the example above was made with the code
 
     \begin{eqexpl}
-      \item{U}voltage at the section, V;
-	  \item{Rs}total section resistance, Ohm.
+      \item{U} voltage at the section, V;
+	  \item{Rs} total section resistance, Ohm.
 	\end{exqexpl}
 
 Width of the field for explained variables could be set with optional
@@ -41,4 +41,7 @@ item in the explanation.
 For formula variables in the explanation use usual string envirinment
 (dollar sign)
 
-    \item{$R_s$}total section resistance, Ohm.
+    \item{$R_s$} total section resistance, Ohm.
+
+See example `example.tex` for more details.  You can compile it with
+`pdflatex example.tex`.

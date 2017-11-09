@@ -1,8 +1,21 @@
 \documentclass{article}
-\usepackage{etoolbox}
 \usepackage{eqexpl}
 
 \begin{document}
+
+\section{The aim of the package}
+
+\section{Architecture}
+
+The list consist of few lengths:
+\begin{itemize}
+\item width of 'intro' section (default is empty, 0pt);
+\item width of spaces between elements (default is 2mm);
+\item width of item block (default is 5mm);
+\item width of separator (default is '---');
+\item the rest of the width of a text (used to align left side of the
+  explanation text).
+\end{itemize}
 
 \section{Test list}
 
@@ -15,54 +28,151 @@
   very very very very very very very very very long line;
 }
 
+This list used for all examples:
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
 \section{Setting eqexplSetSpace}
 
-Set eqexplSetSpace to 0
+Set \verb+\eqexplSetSpace{0mm}+
 \eqexplSetSpace{0mm}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set eqexplSetSpace to default
+Set \verb+\eqexplSetSpace{}+ (default 2mm)
+\eqexplSetSpace{}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
 
-Set eqexplSetSpace to 10
+Set \verb+\eqexplSetSpace{10mm}+
 \eqexplSetSpace{10mm}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set eqexplSetSpace to 20
-\eqexplSetSpace{20mm}
-\begin{eqexpl}
-  \testList
-\end{eqexpl}
+\eqexplSetSpace{}
 
 \section{Setting eqexplSetIntro}
 
-Set eqexplSetSpace to 2mm
-
-Set eqexplSetIntro to 'where'
-\eqexplSetSpace{2mm}
+Set \verb+\eqexplSetIntro{where}+
 \eqexplSetIntro{where}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set eqexplSetSpace to 2mm, set eqexplSetIntro to 'where we have'
-\eqexplSetSpace{2mm}
+Set \verb+\eqexplSetIntro{where we have}+
 \eqexplSetIntro{where we have}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
+\eqexplSetIntro{}
+
 \section{Setting eqexplSetDelim}
+
+Set \verb+\eqexplSetDelim{---}+ (default)
+\eqexplSetDelim{---}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetDelim{=}+
+\eqexplSetDelim{=}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetDelim{$\to$}+
+\eqexplSetDelim{$\to$}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+\eqexplSetDelim{---}
 
 \section{Setting eqexplSetItemWidth}
 
+Set \verb+\eqexplSetItemWidth{5mm}+ (default)
+\eqexplSetItemWidth{5mm}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetItemWidth{10mm}+
+\eqexplSetItemWidth{10mm}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+\eqexplSetItemWidth{5mm}
+
 \section{Setting item width for 'begin-end' block}
+
+When we have a long variable name (for example \verb+very-very-long+),
+it could lead us to overhelming the variable name as in example below
+
+\begin{eqexpl}
+  \item{$long$} just variable
+  \item{$very-long$} just variable
+  \item{$very-very-long$} just variable
+\end{eqexpl}
+
+User could set a parameter to environment to use custom item width for
+current block in opposition to setting it before block to new value
+and unsetting it to default after the end of the block.  For this
+purpose use \verb+\begin{eqexpl}[width]+.
+
+Set \verb+\begin{eqexpl}[10mm]+
+\begin{eqexpl}[10mm]
+  \item{$long$} just variable
+  \item{$very-long$} just variable
+  \item{$very-very-long$} just variable
+\end{eqexpl}
+
+Test for backing to default in next block
+\begin{eqexpl}
+  \item{$long$} just variable
+  \item{$very-long$} just variable
+  \item{$very-very-long$} just variable
+\end{eqexpl}
+
+Set \verb+\begin{eqexpl}[20mm]+
+\begin{eqexpl}[20mm]
+  \item{$long$} just variable
+  \item{$very-long$} just variable
+  \item{$very-very-long$} just variable
+\end{eqexpl}
+
+Test for backing to default in next block
+\begin{eqexpl}
+  \item{$long$} just variable
+  \item{$very-long$} just variable
+  \item{$very-very-long$} just variable
+\end{eqexpl}
+
+\section{Setting eqexplItemAlign}
+
+Set \verb+\eqexplSetItemAlign{r}+ (default)
+\eqexplSetItemAlign{r}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetItemAlign{l}+
+\eqexplSetItemAlign{l}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetItemAlign{c}+
+\eqexplSetItemAlign{c}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+\eqexplSetItemAlign{r}
 
 \end{document}
