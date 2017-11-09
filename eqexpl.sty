@@ -5,9 +5,9 @@
 %% Spaces between elements
 \newlength{\eqexplSpaceWidth}
 \newcommand{\eqexplSetSpace}[1]{%
-  \setlength{\eqexplSpaceWidth}{#1}%
+  \setlength{\eqexplSpaceWidth}{\ifstrempty{#1}{2mm}{#1}}%
 }
-\eqexplSetSpace{2mm}
+\eqexplSetSpace{}
 
 %% Width of 'intro' (typ. 'where')
 \newcommand{\eqexplSetIntro}[1]{%
