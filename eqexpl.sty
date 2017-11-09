@@ -27,6 +27,11 @@
 }
 \eqexplSetItemWidth{5mm}
 
+%% Align of item
+\newcommand{\eqexplSetItemAlign}[1]{%
+  \def\eqexplItemAlign{#1}%
+}
+\eqexplSetItemAlign{r}
 
 \newlength{\itemWidth}
 \newlength{\leftSideWidth}
@@ -48,7 +53,7 @@
         \makebox[\widthof{\eqexplIntro}][l]{\iftoggle{eqexplFirstItem}{\eqexplIntro}{}}%
         \hspace{\eqexplSpaceWidth}%
       }
-      \makebox[\itemWidth][r]{##1}%
+      \makebox[\itemWidth][\eqexplItemAlign]{##1}%
       \hspace{\eqexplSpaceWidth}%
       \makebox[\widthof{\eqexplDelim}][c]{\eqexplDelim}%
       \hspace{\eqexplSpaceWidth}%
