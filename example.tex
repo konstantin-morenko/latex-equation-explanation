@@ -1,8 +1,21 @@
 \documentclass{article}
-\usepackage{etoolbox}
 \usepackage{eqexpl}
 
 \begin{document}
+
+\section{The aim of the package}
+
+\section{Architecture}
+
+The list consist of few lengths:
+\begin{itemize}
+\item width of 'intro' section (default is empty, 0pt);
+\item width of spaces between elements (default is 2mm);
+\item width of item block (default is 5mm);
+\item width of separator (default is '---');
+\item the rest of the width of a text (used to align left side of the
+  explanation text).
+\end{itemize}
 
 \section{Test list}
 
@@ -15,54 +28,109 @@
   very very very very very very very very very long line;
 }
 
+This list used for all examples:
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
 \section{Setting eqexplSetSpace}
 
-Set eqexplSetSpace to 0
+Set \verb+\eqexplSetSpace{0mm}+
 \eqexplSetSpace{0mm}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set eqexplSetSpace to default
+Set \verb+\eqexplSetSpace{}+ (default 2mm)
+\eqexplSetSpace{}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
 
-Set eqexplSetSpace to 10
+Set \verb+\eqexplSetSpace{10mm}+
 \eqexplSetSpace{10mm}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set eqexplSetSpace to 20
-\eqexplSetSpace{20mm}
-\begin{eqexpl}
-  \testList
-\end{eqexpl}
+\eqexplSetSpace{}
 
 \section{Setting eqexplSetIntro}
 
-Set eqexplSetSpace to 2mm
-
-Set eqexplSetIntro to 'where'
-\eqexplSetSpace{2mm}
+Set \verb+\eqexplSetIntro{where}+
 \eqexplSetIntro{where}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set eqexplSetSpace to 2mm, set eqexplSetIntro to 'where we have'
-\eqexplSetSpace{2mm}
+Set \verb+\eqexplSetIntro{where we have}+
 \eqexplSetIntro{where we have}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
+\eqexplSetIntro{}
+
 \section{Setting eqexplSetDelim}
+
+Set \verb+\eqexplSetDelim{---}+ (default)
+\eqexplSetDelim{---}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetDelim{=}+ (default)
+\eqexplSetDelim{=}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetDelim{$\to$}+ (default)
+\eqexplSetDelim{$\to$}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+\eqexplSetDelim{---}
 
 \section{Setting eqexplSetItemWidth}
 
+Set \verb+\eqexplSetItemWidth{5mm}+ (default)
+\eqexplSetItemWidth{5mm}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetItemWidth{10mm}+ (default)
+\eqexplSetItemWidth{10mm}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+\eqexplSetItemWidth{5mm}
+
 \section{Setting item width for 'begin-end' block}
+
+\section{Setting eqexplItemAlign}
+
+Set \verb+\eqexplSetItemAlign{r}+ (default)
+\eqexplSetItemAlign{r}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetItemAlign{l}+
+\eqexplSetItemAlign{l}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+Set \verb+\eqexplSetItemAlign{c}+
+\eqexplSetItemAlign{c}
+\begin{eqexpl}
+  \testList
+\end{eqexpl}
+
+\eqexplSetItemAlign{r}
 
 \end{document}
