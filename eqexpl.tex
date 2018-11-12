@@ -1,15 +1,37 @@
 \documentclass{article}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 \usepackage{eqexpl}
 
 \begin{document}
 
+\title{eqexpl}
+\author{Konstantin Morenko}
+
+\maketitle
+
 \section{The aim of the package}
+
+Package was developed to give the tool to make <<perfect>> explanation
+for formulas, not just the enumeration.
+
+\section{Similar packages}
+
+Nomencl: \href{http://ctan.org/pkg/nomencl}{http://ctan.org/pkg/nomencl}
+
+\section{Contributors}
+
+Konstantin Morenko \href{mailto:me@konstantin-morenko.ru}{me@konstantin-morenko.ru}
+
+The package currently hosted on GitHub:
+\href{https://github.com/konstantin-morenko/latex-equation-explanation}{https://github.com/konstantin-morenko/latex-equation-explanation}
 
 \section{Architecture}
 
 The list consist of few lengths:
 \begin{itemize}
-\item width of 'intro' section (default is empty, 0pt);
+\item width of <<intro>> section (default is empty, 0pt);
 \item width of spaces between elements (default is 2mm);
 \item width of item block (default is 5mm);
 \item width of separator (default is '---');
@@ -33,21 +55,30 @@ This list used for all examples:
   \testList
 \end{eqexpl}
 
-\section{Setting eqexplSetSpace}
+\section{Configure and examples}
 
-Set \verb+\eqexplSetSpace{0mm}+
+\subsection{Setting eqexplSetSpace}
+
+\noindent Set \verb+\eqexplSetSpace{0mm}+
+
 \eqexplSetSpace{0mm}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set \verb+\eqexplSetSpace{}+ (default 2mm)
+\vspace{5mm}
+
+\noindent Set \verb+\eqexplSetSpace{}+ (default 2mm)
+
 \eqexplSetSpace{}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set \verb+\eqexplSetSpace{10mm}+
+\vspace{5mm}
+
+\noindent Set \verb+\eqexplSetSpace{10mm}+
+
 \eqexplSetSpace{10mm}
 \begin{eqexpl}
   \testList
@@ -55,15 +86,19 @@ Set \verb+\eqexplSetSpace{10mm}+
 
 \eqexplSetSpace{}
 
-\section{Setting eqexplSetIntro}
+\subsection{Setting eqexplSetIntro}
 
-Set \verb+\eqexplSetIntro{where}+
+\noindent Set \verb+\eqexplSetIntro{where}+
+
 \eqexplSetIntro{where}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set \verb+\eqexplSetIntro{where we have}+
+\vspace{5mm}
+
+\noindent Set \verb+\eqexplSetIntro{where we have}+
+
 \eqexplSetIntro{where we have}
 \begin{eqexpl}
   \testList
@@ -71,21 +106,28 @@ Set \verb+\eqexplSetIntro{where we have}+
 
 \eqexplSetIntro{}
 
-\section{Setting eqexplSetDelim}
+\subsection{Setting eqexplSetDelim}
 
-Set \verb+\eqexplSetDelim{---}+ (default)
+\noindent Set \verb+\eqexplSetDelim{---}+ (default)
+
 \eqexplSetDelim{---}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set \verb+\eqexplSetDelim{=}+
+\vspace{5mm}
+
+\noindent Set \verb+\eqexplSetDelim{=}+
+
 \eqexplSetDelim{=}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set \verb+\eqexplSetDelim{$\to$}+
+\vspace{5mm}
+
+\noindent Set \verb+\eqexplSetDelim{$\to$}+
+
 \eqexplSetDelim{$\to$}
 \begin{eqexpl}
   \testList
@@ -93,15 +135,19 @@ Set \verb+\eqexplSetDelim{$\to$}+
 
 \eqexplSetDelim{---}
 
-\section{Setting eqexplSetItemWidth}
+\subsection{Setting eqexplSetItemWidth}
 
-Set \verb+\eqexplSetItemWidth{5mm}+ (default)
+\noindent Set \verb+\eqexplSetItemWidth{5mm}+ (default)
+
 \eqexplSetItemWidth{5mm}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set \verb+\eqexplSetItemWidth{10mm}+
+\vspace{5mm}
+
+\noindent Set \verb+\eqexplSetItemWidth{10mm}+
+
 \eqexplSetItemWidth{10mm}
 \begin{eqexpl}
   \testList
@@ -109,7 +155,7 @@ Set \verb+\eqexplSetItemWidth{10mm}+
 
 \eqexplSetItemWidth{5mm}
 
-\section{Setting item width for 'begin-end' block}
+\subsection{Setting item width for 'begin-end' block}
 
 When we have a long variable name (for example \verb+very-very-long+),
 it could lead us to overhelming the variable name as in example below
@@ -125,49 +171,66 @@ current block in opposition to setting it before block to new value
 and unsetting it to default after the end of the block.  For this
 purpose use \verb+\begin{eqexpl}[width]+.
 
-Set \verb+\begin{eqexpl}[10mm]+
+\noindent Set \verb+\begin{eqexpl}[10mm]+
+
 \begin{eqexpl}[10mm]
   \item{$long$} just variable
   \item{$very-long$} just variable
   \item{$very-very-long$} just variable
 \end{eqexpl}
 
-Test for backing to default in next block
+\vspace{5mm}
+
+\noindent Test for backing to default in next block
+
 \begin{eqexpl}
   \item{$long$} just variable
   \item{$very-long$} just variable
   \item{$very-very-long$} just variable
 \end{eqexpl}
 
-Set \verb+\begin{eqexpl}[20mm]+
+\vspace{5mm}
+
+\noindent Set \verb+\begin{eqexpl}[20mm]+
+
 \begin{eqexpl}[20mm]
   \item{$long$} just variable
   \item{$very-long$} just variable
   \item{$very-very-long$} just variable
 \end{eqexpl}
 
-Test for backing to default in next block
+\vspace{5mm}
+
+\noindent Test for backing to default in next block
+
 \begin{eqexpl}
   \item{$long$} just variable
   \item{$very-long$} just variable
   \item{$very-very-long$} just variable
 \end{eqexpl}
 
-\section{Setting eqexplItemAlign}
+\subsection{Setting eqexplItemAlign}
 
-Set \verb+\eqexplSetItemAlign{r}+ (default)
+\noindent Set \verb+\eqexplSetItemAlign{r}+ (default)
+
 \eqexplSetItemAlign{r}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set \verb+\eqexplSetItemAlign{l}+
+\vspace{5mm}
+
+\noindent Set \verb+\eqexplSetItemAlign{l}+
+
 \eqexplSetItemAlign{l}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
 
-Set \verb+\eqexplSetItemAlign{c}+
+\vspace{5mm}
+
+\noindent Set \verb+\eqexplSetItemAlign{c}+
+
 \eqexplSetItemAlign{c}
 \begin{eqexpl}
   \testList
