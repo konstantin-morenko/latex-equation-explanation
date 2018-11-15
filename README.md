@@ -1,8 +1,13 @@
-Explanation of the formulas in LaTeX
+Align explanation for formulas in LaTeX
 ========
 
-Package `eqexpl` was developed to give the tool to make «perfect»
-explanation to formulas, not just the enumeration.
+The package is licenced under Creative Commons Attribution-ShareAlike
+4.0 International (CC BY-SA 4.0).
+
+The package was developed as an answer to the question on [tex.stackexchange.com](https://tex.stackexchange.com/q/95838/119485)
+
+The package `eqexpl` was developed to give the tool to make «perfect»
+explanation for formulas, not just the enumeration.
 
                 I = U / Rs,            (1)
 
