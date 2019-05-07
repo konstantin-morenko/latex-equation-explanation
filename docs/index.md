@@ -3,8 +3,16 @@ Explanation of the formulas in LaTeX
 
 [Русский]({{ site.baseurl }}{% link index.ru.md %})
 
-Package `eqexpl` was developed for give an ability to make «perfect»
-explanation to formulas, not just the enumeration.
+Package available on [ctan.org](https://ctan.org/pkg/eqexpl).
+
+Package available in Ubuntu in package
+[texlive-science](https://packages.ubuntu.com/disco/texlive-science)
+starting from version 19.4 Disco Dingo.
+
+Package `eqexpl` was developed as an answer to question on
+[StackExchange](https://tex.stackexchange.com/q/95838/119485) for
+giving the ability to make «perfect» explanation of components of a
+formula, not just the enumeration.
 
 ![Eqexpl example]({{ site.baseurl }}/eqexpl-example.png)
 
