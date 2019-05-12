@@ -50,15 +50,15 @@
                              \eqexplSpaceWidth}%
   \newtoggle{eqexplFirstItem}%
   \toggletrue{eqexplFirstItem}%
-  \renewcommand{\item}[1]{%
+  \renewcommand{\item}[2][\eqexplDelim]{%
     \olditem \makebox[\leftSideWidth]{%
       \ifdefempty{\eqexplIntro}{}{
         \makebox[\widthof{\eqexplIntro}][l]{\iftoggle{eqexplFirstItem}{\eqexplIntro}{}}%
         \hspace{\eqexplSpaceWidth}%
       }
-      \makebox[\itemWidth][\eqexplItemAlign]{##1}%
+      \makebox[\itemWidth][\eqexplItemAlign]{##2}%
       \hspace{\eqexplSpaceWidth}%
-      \makebox[\widthof{\eqexplDelim}][c]{\eqexplDelim}%
+      \makebox[\widthof{##1}][c]{##1}%
       \hspace{\eqexplSpaceWidth}%
     }%
     \togglefalse{eqexplFirstItem}%
