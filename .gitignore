@@ -1,0 +1,8 @@
+# LaTeX compiled files
+*.aux
+*.log
+*.out
+*.pdf
+
+# Archives
+*.tar.gz
