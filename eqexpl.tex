@@ -21,6 +21,9 @@ The package was developed as an answer to the question \href{https://tex.stackex
 Package was developed to give the tool to make <<perfect>> explanation
 for formulas, not just the enumeration.
 
+This package allows to describe formula's variables in unified through
+the document manner.
+
 \section{Similar packages}
 
 Nomencl: \href{http://ctan.org/pkg/nomencl}{http://ctan.org/pkg/nomencl}
@@ -44,7 +47,39 @@ The list consist of few lengths:
   explanation text).
 \end{itemize}
 
-\section{Test list}
+\section{Usage}
+
+First, include package into preamble with
+
+\begin{verbatim}
+  \usepackage{eqexpl}
+\end{verbatim}
+
+Then write a formula and describe the parameters
+
+\begin{equation}
+  E = m c^2
+\end{equation}
+\begin{eqexpl}
+\item{$E$} equivalent energy
+\item{$m$} mass
+\item{$c$} speed of light ($ c \approx 3 \times 10^8 m/s$)
+\end{eqexpl}
+using
+\begin{verbatim}
+  \begin{equation}
+    E = m c^2
+  \end{equation}
+  \begin{eqexpl}
+  \item{$E$} equivalent energy
+  \item{$m$} mass
+  \item{$c$} speed of light ($ c \approx 3 \times 10^8 m/s$)
+  \end{eqexpl}
+\end{verbatim}
+
+\section{Configure and examples}
+
+\subsection{Test list}
 
 \newcommand{\testList}{
 \item{U} voltage at the section, V;
@@ -55,12 +90,10 @@ The list consist of few lengths:
   very very very very very very very very very long line;
 }
 
-This list used for all examples:
+This list is used for next examples:
 \begin{eqexpl}
   \testList
 \end{eqexpl}
-
-\section{Configure and examples}
 
 \subsection{Setting eqexplSetSpace}
 
@@ -102,9 +135,9 @@ This list used for all examples:
 
 \vspace{5mm}
 
-\noindent Set \verb+\eqexplSetIntro{where we have}+
+\noindent Set \verb+\eqexplSetIntro{in this equation}+
 
-\eqexplSetIntro{where we have}
+\eqexplSetIntro{in this equation}
 \begin{eqexpl}
   \testList
 \end{eqexpl}
