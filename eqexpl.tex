@@ -278,20 +278,17 @@ purpose use \verb+\begin{eqexpl}[width]+.
 
 \subsection{Setting custom delimiter for individual items}
 
-\noindent Setting \verb+\item[=]{U}...+ and
+\noindent Setting \verb+\item{U}[=]...+ and
 \verb+\item[$\to$]{Rs}...+.
 
 \begin{eqexpl}
-  \item[=]{U} voltage at the section, V;
-  \item[$\to$]{Rs} total section resistance, Ohm.
-  \item{$Very^{46}$}very very very very very very very very very very very
+  \item{U}[=] voltage at the section, V;
+  \item{Rs}[$\to$] total section resistance, Ohm.
+  \item{$Very^{46}$}[$\propto$] very very very very very very very
     very very very very very very very very very very very very very
     very very very very very very very very very very very very very
-    very very very very very very very very very long line;
+    very very very very very very very very very very very very very
+    long line;
 \end{eqexpl}
-
-I know that it's a bit confusing setting the delimiter before the
-variable while it will be placed after, but the custom delimiter for
-item is an optional argument and must be placed before mandatory ones.
 
 \end{document}

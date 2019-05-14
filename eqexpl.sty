@@ -3,6 +3,7 @@
 
 \ProvidesPackage{eqexpl}[2018/11/11 v.1]
 \RequirePackage{etoolbox}
+\RequirePackage{xparse}
 \RequirePackage{calc}
 
 %% Spaces between elements
@@ -50,15 +51,15 @@
                              \eqexplSpaceWidth}%
   \newtoggle{eqexplFirstItem}%
   \toggletrue{eqexplFirstItem}%
-  \renewcommand{\item}[2][\eqexplDelim]{%
+  \RenewDocumentCommand{\item}{ m O{\eqexplDelim}}{%
     \olditem \makebox[\leftSideWidth]{%
       \ifdefempty{\eqexplIntro}{}{
         \makebox[\widthof{\eqexplIntro}][l]{\iftoggle{eqexplFirstItem}{\eqexplIntro}{}}%
         \hspace{\eqexplSpaceWidth}%
       }
-      \makebox[\itemWidth][\eqexplItemAlign]{##2}%
+      \makebox[\itemWidth][\eqexplItemAlign]{##1}%
       \hspace{\eqexplSpaceWidth}%
-      \makebox[\widthof{##1}][c]{##1}%
+      \makebox[\widthof{##2}][c]{##2}%
       \hspace{\eqexplSpaceWidth}%
     }%
     \togglefalse{eqexplFirstItem}%
