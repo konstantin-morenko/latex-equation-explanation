@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\title{eqexpl v. 1.1}
+\title{eqexpl v. 1.1.1}
 \author{Konstantin Morenko}
 
 \maketitle
@@ -14,17 +14,17 @@
 The package is licenced under Creative Commons Attribution-ShareAlike
 4.0 International (CC BY-SA 4.0)
 
-The package use \href{https://semver.org/}{semantic versioning}.
+The package uses \href{https://semver.org/}{semantic versioning}.
 
 \section{The aim of the package}
 
 The package was developed as an answer to the question \href{https://tex.stackexchange.com/q/95838/119485}{on tex.stackexchange.com}
 
-Package was developed to give the tool to make <<perfect>> explanation
-for formulas, not just the enumeration.
+The package was developed in order to give the tool to make the <<perfect>> explanation
+for equations, not just the enumeration.
 
-This package allows to describe formula's variables in unified through
-the document manner.
+This package allows to describe equation's variables in unified manner through
+the document.
 
 \section{Similar packages}
 
@@ -34,7 +34,7 @@ Nomencl: \href{http://ctan.org/pkg/nomencl}{http://ctan.org/pkg/nomencl}
 
 Konstantin Morenko \href{mailto:me@konstantin-morenko.ru}{me@konstantin-morenko.ru}
 
-The package currently hosted on GitHub:
+The package is currently hosted on GitHub:
 \href{https://github.com/konstantin-morenko/latex-equation-explanation}{https://github.com/konstantin-morenko/latex-equation-explanation}
 
 \section{Architecture}
@@ -45,19 +45,19 @@ The list consist of few lengths:
 \item width of spaces between elements (default is 2mm);
 \item width of item block (default is 5mm);
 \item width of separator (default is '---');
-\item the rest of the width of a text (used to align left side of the
+\item the rest of the width of the text block (used to align left side of the
   explanation text).
 \end{itemize}
 
 \section{Usage}
 
-First, include package into preamble with
+First, include the package into preamble with
 
 \begin{verbatim}
   \usepackage{eqexpl}
 \end{verbatim}
 
-Then write a formula and describe the parameters
+Then write an equation and describe the variables
 
 \begin{equation}
   E = m c^2
@@ -97,7 +97,7 @@ This list is used for next examples:
   \testList
 \end{eqexpl}
 
-\subsection{Setting eqexplSetSpace}
+\subsection{eqexplSetSpace}
 
 \noindent Set \verb+\eqexplSetSpace{0mm}+
 
@@ -126,7 +126,7 @@ This list is used for next examples:
 
 \eqexplSetSpace{}
 
-\subsection{Setting eqexplSetIntro}
+\subsection{eqexplSetIntro}
 
 \noindent Set \verb+\eqexplSetIntro{where}+
 
@@ -146,7 +146,7 @@ This list is used for next examples:
 
 \eqexplSetIntro{}
 
-\subsection{Setting eqexplSetDelim}
+\subsection{eqexplSetDelim}
 
 \noindent Set \verb+\eqexplSetDelim{---}+ (default)
 
@@ -175,7 +175,7 @@ This list is used for next examples:
 
 \eqexplSetDelim{---}
 
-\subsection{Setting eqexplSetItemWidth}
+\subsection{eqexplSetItemWidth}
 
 \noindent Set \verb+\eqexplSetItemWidth{5mm}+ (default)
 
@@ -195,10 +195,10 @@ This list is used for next examples:
 
 \eqexplSetItemWidth{5mm}
 
-\subsection{Setting item width for 'begin-end' block}
+\subsection{Item width for 'begin-end' block}
 
 When we have a long variable name (for example \verb+very-very-long+),
-it could lead us to overhelming the variable name as in example below
+it could lead us to overhelming the variable name as in the example below
 
 \begin{eqexpl}
   \item{$long$} just variable
@@ -206,7 +206,7 @@ it could lead us to overhelming the variable name as in example below
   \item{$very-very-long$} just variable
 \end{eqexpl}
 
-User could set a parameter to environment to use custom item width for
+User can set a parameter to the specific environment to use custom item width for
 current block in opposition to setting it before block to new value
 and unsetting it to default after the end of the block.  For this
 purpose use \verb+\begin{eqexpl}[width]+.
@@ -249,7 +249,7 @@ purpose use \verb+\begin{eqexpl}[width]+.
   \item{$very-very-long$} just variable
 \end{eqexpl}
 
-\subsection{Setting eqexplItemAlign}
+\subsection{eqexplItemAlign}
 
 \noindent Set \verb+\eqexplSetItemAlign{r}+ (default)
 
@@ -278,7 +278,7 @@ purpose use \verb+\begin{eqexpl}[width]+.
 
 \eqexplSetItemAlign{r}
 
-\subsection{Setting custom delimiter for individual items}
+\subsection{Custom delimiter for individual items}
 
 \noindent Setting \verb+\item{U}[=]...+ and
 \verb+\item[$\to$]{Rs}...+.
